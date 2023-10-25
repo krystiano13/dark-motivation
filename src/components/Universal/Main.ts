@@ -9,4 +9,7 @@ export const Main = styled.main`
   padding : 0;
   background-color: var(--bg);
   color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
