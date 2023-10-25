@@ -1,10 +1,14 @@
 import React from 'react';
 import { Main } from './components/Universal/Main';
+import { HomeWrap } from "./components/Home/HomeWrap";
+import { Title } from "./components/Home/Title";
 
 const App = () => {
     return (
         <Main>
-            <h1>Dark Motivation App</h1>
+            <HomeWrap>
+                <Title>Dark Motivation</Title>
+            </HomeWrap>
         </Main>
     );
 }
