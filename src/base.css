@@ -4,3 +4,39 @@
     box-sizing: border-box;
     overflow: hidden;
 }
+
+:root {
+    --bg : #0B0A0A;
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 300;
+    src: url('./fonts/Inter-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 400;
+    src: url('./fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    src: url('./fonts/Montserrat-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    src: url('./fonts/Montserrat-SemiBold.woff2') format('woff2');
+}
