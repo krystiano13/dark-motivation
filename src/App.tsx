@@ -1,8 +1,11 @@
 import React from 'react';
+import { Main } from './components/Universal/Main';
 
 const App = () => {
     return (
-        <h1>Dark Motivation App</h1>
+        <Main>
+            <h1>Dark Motivation App</h1>
+        </Main>
     );
 }
 
