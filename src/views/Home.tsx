@@ -7,6 +7,7 @@ import {Title} from "../components/Home/Title";
 
 const Home = () => {
     const homeRef = useRef(null);
+    const buttonRef = useRef(null);
     const [render, setRender] = useState(false);
     const navigate = useNavigate();
 
@@ -14,6 +15,7 @@ const Home = () => {
         gsap.set(homeRef.current, {width: 0, scale: 0, autoAlpha: 0});
         gsap.to(homeRef.current, 0.25, {scale: 1, autoAlpha: 0.5});
         gsap.to(homeRef.current, 0.25, {width: 'auto', delay: 0.75, autoAlpha: 1});
+        gsap.to(buttonRef.current, 0.1, {delay: 0.75, autoAlpha: 1});
     }, []);
 
     const proceed = () => {
@@ -29,7 +31,7 @@ const Home = () => {
             <Title>
                 Dark Motivation
                 <br/>
-                <HomeButton onClick={proceed}>Proceed</HomeButton>
+                <HomeButton ref={buttonRef} onClick={proceed}>Proceed</HomeButton>
             </Title>
         </HomeWrap>
     )

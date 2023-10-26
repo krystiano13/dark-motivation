@@ -13,6 +13,7 @@ export const HomeButton = styled.button`
   min-height : 3.5rem;
   transition: 250ms;
   z-index: 1000;
+  opacity : 0;
   
   &::before {
     content: '';
