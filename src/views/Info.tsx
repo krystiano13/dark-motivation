@@ -22,7 +22,9 @@ const Info = () => {
     const handleNextStep = () => {
         gsap.to(buttonRef.current, 0.35, { autoAlpha : 0, y : 100 });
         gsap.to(textRef.current, 0.35, { autoAlpha : 0, y : 100, delay : 0.75 })
-            .then(() => {});
+            .then(() => {
+                navigate('/gender');
+            });
     }
 
     return (

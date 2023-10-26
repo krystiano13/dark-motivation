@@ -1,6 +1,11 @@
+import {InfoWrap} from "../components/Info/InfoWrap";
+import {InfoText} from "../components/Info/InfoText";
+
 const Gender = () => {
     return (
-        <div></div>
+        <InfoWrap>
+            <InfoText>First question. What is your gender ?</InfoText>
+        </InfoWrap>
     )
 }
 
