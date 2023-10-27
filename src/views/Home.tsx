@@ -1,9 +1,9 @@
 import { useRef, useEffect, useState } from 'react';
 import { useNavigate } from "react-router";
-import gsap from 'gsap';
 import {HomeWrap} from "../components/Home/HomeWrap";
 import {HomeButton} from "../components/Home/HomeButton";
 import {Title} from "../components/Home/Title";
+import gsap from "gsap";
 
 const Home = () => {
     const homeRef = useRef(null);

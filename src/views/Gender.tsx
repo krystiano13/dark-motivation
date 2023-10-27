@@ -9,15 +9,19 @@ import { useEffect, useRef } from "react";
 const Gender = () => {
     const maleButton = useRef(null);
     const femaleButton = useRef(null);
+    const textRef = useRef(null);
 
     useEffect(() => {
-        gsap.set(maleButton.current,{ autoAlpha : 1 });
-        gsap.set(femaleButton.current,{ autoAlpha : 1 });
+        gsap.set([maleButton.current, femaleButton.current, textRef.current],
+            { y : 100, autoAlpha : 0 });
+        gsap.to(textRef.current, 0.35 ,{ y : 0, autoAlpha : 1 });
+        gsap.to(maleButton.current, 0.35 ,{ y : 0, autoAlpha : 1, delay : 0.5 });
+        gsap.to(femaleButton.current, 0.35 ,{ y : 0, autoAlpha : 1, delay : 0.65 });
     }, []);
 
     return (
         <InfoWrap>
-            <InfoText>First question. What is your gender ?</InfoText>
+            <InfoText ref={textRef}>First question. What is your gender ?</InfoText>
             <GenderButtons>
                 <HomeButton ref={maleButton}>Male</HomeButton>
                 <HomeButton ref={femaleButton}>Female</HomeButton>
