@@ -5,5 +5,6 @@ export const GenderButtons = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  min-height: 7rem;
+  min-height: 10rem;
+  transform: translateY(-2rem);
 `;

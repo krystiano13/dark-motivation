@@ -24,7 +24,9 @@ const App = () => {
                         </Suspense>} />
                     <Route path='/gender' element={
                         <Suspense fallback={<Loader />}>
-                            <Gender />
+                            <Gender
+                                setGender={(gender:'male'|'female') => setGender(gender)}
+                            />
                         </Suspense>} />
                 </Routes>
             </BrowserRouter>
