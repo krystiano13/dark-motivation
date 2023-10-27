@@ -14,7 +14,7 @@ const Home = () => {
     useEffect(() => {
         gsap.set(homeRef.current, {width: 0, scale: 0, autoAlpha: 0});
         gsap.to(homeRef.current, 0.25, {scale: 1, autoAlpha: 0.5});
-        gsap.to(homeRef.current, 0.25, {width: 'auto', delay: 0.75, autoAlpha: 1});
+        gsap.to(homeRef.current, 0.25, {width: 'auto', delay: 0.75, autoAlpha: 1, ease: "power2.out"});
         gsap.to(buttonRef.current, 0.1, {delay: 0.75, autoAlpha: 1});
     }, []);
 
