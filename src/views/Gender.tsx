@@ -5,6 +5,7 @@ import {GenderButtons} from "../components/Gender/GenderButtons";
 
 import gsap from 'gsap';
 import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router";
 
 interface GenderProps {
     setGender: (gender: 'male' | 'female') => void
@@ -14,6 +15,8 @@ const Gender: React.FC<GenderProps> = ({ setGender }) => {
     const maleButton = useRef(null);
     const femaleButton = useRef(null);
     const textRef = useRef(null);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         gsap.set([maleButton.current, femaleButton.current, textRef.current],
@@ -31,6 +34,9 @@ const Gender: React.FC<GenderProps> = ({ setGender }) => {
 
         gsap.to([femaleButton.current,maleButton.current], 0.35 ,{ y : 100, autoAlpha : 0 });
         gsap.to(textRef.current, 0.35 ,{ y : 100, autoAlpha : 0, delay : 0.5 })
+            .then(() => {
+                navigate('/date');
+            })
     }
 
     return (
