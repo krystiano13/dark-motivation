@@ -10,6 +10,7 @@ const Date = lazy(() => import('./views/Date'));
 
 const App = () => {
     const [gender,setGender] = useState<"male" | "female">();
+    const [date, setDate] = useState<Date>();
 
     return (
         <Main>
@@ -31,7 +32,7 @@ const App = () => {
                         </Suspense>} />
                     <Route path='/date' element={
                         <Suspense fallback={<Loader />}>
-                            <Date />
+                            <Date setDate={(date: Date) => setDate(date)} />
                         </Suspense>} />
                 </Routes>
             </BrowserRouter>
