@@ -45,3 +45,17 @@ h1,h2,h3,h4,h5,h6,button {
     cursor: pointer;
     background-color: white;
 }
+
+::-webkit-datetime-edit-fields-wrapper {
+    width : 12rem;
+    box-sizing: border-box;
+    background-color: #0B0A0A;
+}
+
+::-webkit-datetime-edit-day-field {
+    background-color: #0B0A0A;
+}
+
+::-webkit-datetime-edit-hour-field {
+    background-color: #0B0A0A;
+}
