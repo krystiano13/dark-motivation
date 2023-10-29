@@ -1,10 +1,21 @@
 import {ResultWrap} from "../components/Result/ResultWrap";
 import {ResultModal,ResultBar, ResultInfo} from "../components/Result/ResultModal";
 import {ResultButton, ResultText} from "../components/Result/ResultModal";
+
+import gsap from 'gsap';
+import { useEffect, useRef } from "react";
+
 const Result = () => {
+    const modalRef = useRef(null);
+
+    useEffect(() => {
+        gsap.set(modalRef.current, { y : 100, autoAlpha : 0 });
+        gsap.to(modalRef.current, 0.35 , { y : 0, autoAlpha : 1, delay : 0.15 });
+    }, []);
+
     return (
         <ResultWrap>
-            <ResultModal>
+            <ResultModal ref={modalRef}>
                 <ResultBar>
                     <ResultButton>X</ResultButton>
                 </ResultBar>
