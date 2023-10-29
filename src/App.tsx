@@ -7,6 +7,7 @@ const Home = lazy(() => import('./views/Home'));
 const Info = lazy(() => import('./views/Info'));
 const Gender = lazy(() => import('./views/Gender'));
 const Date = lazy(() => import('./views/Date'));
+const Result = lazy(() => import('./views/Result'));
 
 const App = () => {
     const [gender,setGender] = useState<"male" | "female">();
@@ -33,6 +34,10 @@ const App = () => {
                     <Route path='/date' element={
                         <Suspense fallback={<Loader />}>
                             <Date setDate={(date: Date) => setDate(date)} />
+                        </Suspense>} />
+                    <Route path='/result' element={
+                        <Suspense fallback={<Loader />}>
+                            <Result />
                         </Suspense>} />
                 </Routes>
             </BrowserRouter>
