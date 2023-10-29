@@ -1,6 +1,7 @@
+import {ResultWrap} from "../components/Result/ResultWrap";
 const Result = () => {
     return (
-        <div></div>
+        <ResultWrap></ResultWrap>
     )
 }
 
