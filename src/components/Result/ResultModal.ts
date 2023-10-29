@@ -32,3 +32,26 @@ export const ResultInfo = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const ResultButton = styled.button`
+  color : whitesmoke;
+  background-color: transparent;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size : 1.6rem;
+  cursor: pointer;
+  margin-right : 1rem;
+`;
+
+export const ResultText = styled.p`
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size : 1.5rem;
+  max-width: 80%;
+  
+  @media screen and (max-width: 992px) {
+    font-size: 1.25rem;
+  }
+`;
