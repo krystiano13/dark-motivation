@@ -5,6 +5,7 @@ import {HomeButton} from "../components/Home/HomeButton";
 
 import gsap from 'gsap';
 import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router";
 
 interface DateProps {
     setDate: (date:Date) => void
@@ -14,6 +15,8 @@ const Date:React.FC<DateProps> = ({ setDate }) => {
     const text = useRef(null);
     const date = useRef<HTMLInputElement>(null);
     const btn = useRef(null);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         gsap.set([text.current, date.current, btn.current], { y : 100, autoAlpha : 0 });
@@ -29,9 +32,9 @@ const Date:React.FC<DateProps> = ({ setDate }) => {
             .then(() => {
                 if(date.current) {
                     setDate(date.current.valueAsDate as Date);
-                    console.log(date.current.valueAsDate);
                 }
-            });
+            })
+            .then(() => navigate('/result'));
     }
 
     return (
