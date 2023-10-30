@@ -1,4 +1,4 @@
 export type Box = {
-    id: number,
-    filled: boolean
+    id: number;
+    filled: boolean;
 }

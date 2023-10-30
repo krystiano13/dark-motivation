@@ -4,6 +4,7 @@ export const ResultModal = styled.div`
   width : 50%;
   height : 50%;
   border: solid whitesmoke 2px;
+  background-color: #0B0A0A;
   
   position : fixed;
   

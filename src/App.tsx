@@ -7,7 +7,7 @@ import {Box} from "./types/Box";
 const Home = lazy(() => import('./views/Home'));
 const Info = lazy(() => import('./views/Info'));
 const Gender = lazy(() => import('./views/Gender'));
-const Date = lazy(() => import('./views/Date'));
+const DateView = lazy(() => import('./views/Date'));
 const Result = lazy(() => import('./views/Result'));
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
     const [fullYears, setFullYears] = useState(0);
     const [boxes, setBoxes] = useState<Box[]>([]);
 
-    useEffect(() => {
+    function getGender() {
         if(gender === 'male') {
             setFullYears(69);
         }
@@ -26,11 +26,36 @@ const App = () => {
 
         const weeks = fullYears * 12 * 4;
 
+        if(boxes.length > 0) {
+            setBoxes([]);
+        }
+
         for(let i=0; i<weeks; i++) {
             setBoxes(prev => [...prev, { id: i, filled: false }]);
         }
+    }
 
+    function calculateWhiteBoxes() {
+        if(!date) return;
+        const weeksFromNow:number = Math.round(Date.now() / 1000 / 60 / 60 / 24 / 7);
+        const birthWeeks:number = Math.round(date.getTime() / 1000 / 60 / 60 / 24 / 7);
+        const whiteBoxes:number = weeksFromNow - birthWeeks;
+        const boxesCopy = boxes;
+
+        for(let i=0; i < whiteBoxes; i++) {
+            boxesCopy[i].filled = true;
+        }
+
+        setBoxes(boxesCopy);
+    }
+
+    useEffect(() => {
+        getGender();
     }, [gender]);
+
+    useEffect(() => {
+        calculateWhiteBoxes();
+    }, [date]);
 
     return (
         <Main>
@@ -52,7 +77,7 @@ const App = () => {
                         </Suspense>} />
                     <Route path='/date' element={
                         <Suspense fallback={<Loader />}>
-                            <Date setDate={(date: Date) => setDate(date)} />
+                            <DateView setDate={(date: Date) => setDate(date)} />
                         </Suspense>} />
                     <Route path='/result' element={
                         <Suspense fallback={<Loader />}>

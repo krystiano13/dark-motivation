@@ -30,7 +30,7 @@ const Result: React.FC<ResultProps> = ({ boxes, date }) => {
         <ResultWrap>
             {
                 boxes?.map(item => (
-                    <BoxItem key={item.id} />
+                    <BoxItem filled={item.filled} key={item.id} />
                 ))
             }
             {
