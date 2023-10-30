@@ -37,7 +37,7 @@ const App = () => {
                         </Suspense>} />
                     <Route path='/result' element={
                         <Suspense fallback={<Loader />}>
-                            <Result />
+                            <Result gender={gender} date={date} />
                         </Suspense>} />
                 </Routes>
             </BrowserRouter>

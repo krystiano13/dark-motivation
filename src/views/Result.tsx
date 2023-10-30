@@ -5,13 +5,20 @@ import {ResultButton, ResultText} from "../components/Result/ResultModal";
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from "react";
 
-const Result = () => {
+interface ResultProps {
+    gender : 'male' | 'female' | undefined;
+    date: Date | undefined
+}
+
+const Result: React.FC<ResultProps> = ({ gender, date }) => {
     const [modal, setModal] = useState<boolean>(true);
     const modalRef = useRef(null);
 
     useEffect(() => {
         gsap.set(modalRef.current, { y : 100, autoAlpha : 0 });
         gsap.to(modalRef.current, 0.35 , { y : 0, autoAlpha : 1, delay : 0.15 });
+
+
     }, []);
 
     const closeModal = () => {
