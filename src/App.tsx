@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState } from "react";
+import {Suspense, lazy, useState, useEffect} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Main } from './components/Universal/Main';
 import {Loader} from "./components/Universal/Loader/Loader";
@@ -12,6 +12,24 @@ const Result = lazy(() => import('./views/Result'));
 const App = () => {
     const [gender,setGender] = useState<"male" | "female">();
     const [date, setDate] = useState<Date>();
+    const [fullYears, setFullYears] = useState(0);
+    const [boxes, setBoxes] = useState<number[]>([]);
+
+    useEffect(() => {
+        if(gender === 'male') {
+            setFullYears(69);
+        }
+        else {
+            setFullYears(73);
+        }
+
+        const weeks = fullYears * 12 * 4;
+
+        for(let i=0; i<weeks; i++) {
+            setBoxes(prev => [...prev, i]);
+        }
+
+    }, [gender]);
 
     return (
         <Main>
@@ -37,7 +55,7 @@ const App = () => {
                         </Suspense>} />
                     <Route path='/result' element={
                         <Suspense fallback={<Loader />}>
-                            <Result gender={gender} date={date} />
+                            <Result boxes={boxes} date={date} />
                         </Suspense>} />
                 </Routes>
             </BrowserRouter>

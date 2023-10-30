@@ -6,33 +6,17 @@ import gsap from 'gsap';
 import { useEffect, useRef, useState } from "react";
 
 interface ResultProps {
-    gender : 'male' | 'female' | undefined;
+    boxes: number[] | undefined,
     date: Date | undefined
 }
 
-const Result: React.FC<ResultProps> = ({ gender, date }) => {
+const Result: React.FC<ResultProps> = ({ boxes, date }) => {
     const [modal, setModal] = useState<boolean>(true);
     const modalRef = useRef(null);
-    const [fullWeeks, setFullWeeks] = useState<number>(0);
 
     useEffect(() => {
         gsap.set(modalRef.current, { y : 100, autoAlpha : 0 });
         gsap.to(modalRef.current, 0.35 , { y : 0, autoAlpha : 1, delay : 0.15 });
-
-        if(!gender || !date) return;
-
-        let fullYears:number;
-        let yearsLeft:number;
-
-        if(gender === 'male') {
-            fullYears = 69;
-        }
-        else {
-            fullYears = 74;
-        }
-
-        setFullWeeks(fullYears);
-
     }, []);
 
     const closeModal = () => {
@@ -42,6 +26,9 @@ const Result: React.FC<ResultProps> = ({ gender, date }) => {
 
     return (
         <ResultWrap>
+            {
+                boxes?.map(item => <p>{item}</p>)
+            }
             {
                 modal && <ResultModal ref={modalRef}>
                     <ResultBar>
