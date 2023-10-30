@@ -13,11 +13,25 @@ interface ResultProps {
 const Result: React.FC<ResultProps> = ({ gender, date }) => {
     const [modal, setModal] = useState<boolean>(true);
     const modalRef = useRef(null);
+    const [fullWeeks, setFullWeeks] = useState<number>(0);
 
     useEffect(() => {
         gsap.set(modalRef.current, { y : 100, autoAlpha : 0 });
         gsap.to(modalRef.current, 0.35 , { y : 0, autoAlpha : 1, delay : 0.15 });
 
+        if(!gender || !date) return;
+
+        let fullYears:number;
+        let yearsLeft:number;
+
+        if(gender === 'male') {
+            fullYears = 69;
+        }
+        else {
+            fullYears = 74;
+        }
+
+        setFullWeeks(fullYears);
 
     }, []);
 
