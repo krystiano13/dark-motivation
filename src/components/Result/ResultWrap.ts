@@ -7,5 +7,6 @@ export const ResultWrap = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem;
+  overflow-y: scroll;
 `;

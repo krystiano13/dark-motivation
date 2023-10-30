@@ -1,12 +1,14 @@
 import {ResultWrap} from "../components/Result/ResultWrap";
 import {ResultModal,ResultBar, ResultInfo} from "../components/Result/ResultModal";
 import {ResultButton, ResultText} from "../components/Result/ResultModal";
+import {BoxItem} from "../components/Result/BoxItem";
 
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from "react";
+import {Box} from "../types/Box";
 
 interface ResultProps {
-    boxes: number[] | undefined,
+    boxes: Box[] | undefined,
     date: Date | undefined
 }
 
@@ -27,7 +29,9 @@ const Result: React.FC<ResultProps> = ({ boxes, date }) => {
     return (
         <ResultWrap>
             {
-                boxes?.map(item => <p>{item}</p>)
+                boxes?.map(item => (
+                    <BoxItem key={item.id} />
+                ))
             }
             {
                 modal && <ResultModal ref={modalRef}>

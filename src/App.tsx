@@ -2,6 +2,7 @@ import {Suspense, lazy, useState, useEffect} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Main } from './components/Universal/Main';
 import {Loader} from "./components/Universal/Loader/Loader";
+import {Box} from "./types/Box";
 
 const Home = lazy(() => import('./views/Home'));
 const Info = lazy(() => import('./views/Info'));
@@ -13,7 +14,7 @@ const App = () => {
     const [gender,setGender] = useState<"male" | "female">();
     const [date, setDate] = useState<Date>();
     const [fullYears, setFullYears] = useState(0);
-    const [boxes, setBoxes] = useState<number[]>([]);
+    const [boxes, setBoxes] = useState<Box[]>([]);
 
     useEffect(() => {
         if(gender === 'male') {
@@ -26,7 +27,7 @@ const App = () => {
         const weeks = fullYears * 12 * 4;
 
         for(let i=0; i<weeks; i++) {
-            setBoxes(prev => [...prev, i]);
+            setBoxes(prev => [...prev, { id: i, filled: false }]);
         }
 
     }, [gender]);
