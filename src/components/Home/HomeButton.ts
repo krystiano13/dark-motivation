@@ -22,6 +22,18 @@ export const HomeButton = styled.button`
     font-size : 1rem;
   }
 
+  @media (min-width : 2400px) {
+    min-width : 18rem;
+    min-height : 5rem;
+    font-size : 2rem;
+  }
+
+  @media (min-width : 3200px) {
+    min-width : 24rem;
+    min-height : 6rem;
+    font-size : 2.5rem;
+  }
+
   @media (max-width : 600px) and (min-width : 301px) {
     min-width : 9rem;
     min-height : 3rem;

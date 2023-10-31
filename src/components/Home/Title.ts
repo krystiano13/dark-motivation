@@ -8,6 +8,18 @@ export const Title = styled.h1`
   max-width: 90%;
   margin-left : 5%;
 
+  @media (min-width : 2400px) {
+    font-size : 11rem;
+    max-width: 85%;
+    margin-left : 10%;
+  }
+
+  @media (min-width : 3200px) {
+    font-size : 14rem;
+    max-width: 85%;
+    margin-left : 10%;
+  }
+
   @media (max-width : 992px) {
     font-size : 5rem;
     max-width: 85%;
