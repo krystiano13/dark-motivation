@@ -16,10 +16,17 @@ export const HomeButton = styled.button`
   opacity : 0;
   
   @media (max-width : 300px) {
+    min-width : 7rem;
+    min-height : 2.75rem;
+    margin-top : 1rem;
+    font-size : 1rem;
+  }
+
+  @media (max-width : 600px) and (min-width : 301px) {
     min-width : 9rem;
     min-height : 3rem;
-    margin-top : 1rem;
-    font-size : 1.1rem;
+    margin-top : 1.25rem;
+    font-size : 1rem;
   }
   
   &::before {
