@@ -10,4 +10,10 @@ export const DateInput = styled.input`
   border : solid whitesmoke 1px;
   padding : 0.75rem;
   margin-bottom: 2rem;
+  
+  @media screen and (max-width : 320px) {
+    font-size : 1.2rem;
+    padding : 0.5rem;
+    width : 12rem;
+  }
 `;
