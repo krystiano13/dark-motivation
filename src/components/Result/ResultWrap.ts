@@ -8,5 +8,5 @@ export const ResultWrap = styled.div`
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
