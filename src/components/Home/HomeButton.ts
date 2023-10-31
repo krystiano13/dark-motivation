@@ -15,6 +15,13 @@ export const HomeButton = styled.button`
   z-index: 1000;
   opacity : 0;
   
+  @media (max-width : 300px) {
+    min-width : 9rem;
+    min-height : 3rem;
+    margin-top : 1rem;
+    font-size : 1.1rem;
+  }
+  
   &::before {
     content: '';
     background-color: whitesmoke;
