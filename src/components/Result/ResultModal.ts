@@ -43,6 +43,7 @@ export const ResultButton = styled.button`
   font-size : 1.6rem;
   cursor: pointer;
   margin-right : 1rem;
+  
 `;
 
 export const ResultText = styled.p`
@@ -54,5 +55,20 @@ export const ResultText = styled.p`
   
   @media screen and (max-width: 992px) {
     font-size: 1.25rem;
+  }
+
+  @media screen and (max-width : 300px) {
+    font-size : 0.9rem;
+    max-width: 85%;
+  }
+
+  @media screen and (max-width : 600px) and (min-width : 301px) {
+    font-size : 1.1rem;
+    max-width: 85%;
+  }
+
+  @media screen and (max-width : 1100px) and (min-width : 800px) {
+    font-size : 1.2rem;
+    max-width: 85%;
   }
 `;

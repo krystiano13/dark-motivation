@@ -13,7 +13,7 @@ export const InfoText = styled.h2`
     font-size : 1.1rem;
   }
 
-  @media (max-width : 400px) {
+  @media (max-width : 400px) and (min-width : 301px) {
     font-size : 1.4rem;
   }
 
