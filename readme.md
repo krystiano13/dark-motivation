@@ -15,13 +15,6 @@
 <h2>Setup</h2>
 Just download project <br>
 Then use this commands:
-```shell
-   npm install
-```
-```shell
-   cd project name
-```
-
-```shell
-   npm run start
-```
+npm install
+cd project name
+npm run start
