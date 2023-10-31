@@ -57,6 +57,14 @@ export const ResultText = styled.p`
     font-size: 1.25rem;
   }
 
+  @media screen and (min-width: 2400px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (min-width: 3200px) {
+    font-size: 3rem;
+  }
+
   @media screen and (max-width : 300px) {
     font-size : 0.9rem;
     max-width: 85%;
