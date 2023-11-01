@@ -1,4 +1,4 @@
-<h1>Dark Motivator</h1>
+<h1>Dark Motivator App</h1>
 
 <h2>About</h2>
 <p>App will try to motivate you, by showing you a visual that will be based on data, that app will ask for</p>
